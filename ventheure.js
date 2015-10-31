@@ -3,6 +3,7 @@ var _ = require('lodash');
 var request = require("request");
 var fs = require('fs');
 var config = require('./config.json');
+var argv = require('yargs').argv;
 
 // settings
 var pwmMin = config.servo.pwmMin,
@@ -51,7 +52,7 @@ function updateData(){
 // moves
 function goTo(angle){
   curGoal = degToPwm(angle); // convert angle into Pwm value
-  console.log('go to',pwmToDeg(curPos),' to ', angle, curGoal);
+  console.log('from',pwmToDeg(curPos),' to ', angle, curGoal);
   next(); // lanch mouvement
 }
 
@@ -72,16 +73,21 @@ function next(){
       // start next step of the move
       setTimeout(next, speed);
     } else {
-      console.log('DONE !', curPos,'->',curGoal,':',dist);
+      console.log('\t DONE ! @', pwmToDeg(curPos));
     }
   });
 }
 
-function test(){
-  setInterval(function(){
-    goTo(_.random(10,300)},
-    3000
-  );
+function test(callback){
+
+  console.log('test/boot MODE')
+
+  goTo(0);
+  setTimeout(function(){ goTo(90) },  6000);
+  setTimeout(function(){ goTo(180) }, 12000);
+  setTimeout(function(){ goTo(270) }, 18000);
+  setTimeout(function(){ goTo(360) }, 24000);
+
 }
 
 function init(){
@@ -93,8 +99,10 @@ function init(){
   }
 
   // connect to API and get weather forecast
-  updateData();
+  updateData()
+
 }
 
 
-init();
+// begin here
+typeof argv.test !== 'undefined' ?  test() : init()

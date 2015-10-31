@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fs": "0.0.2",
+    "lodash": "^3.10.1",
     "pi-blaster.js": "^0.1.1",
-    "request": "^2.65.0"
+    "request": "^2.65.0",
+    "yargs": "^3.29.0"
   }
 }
