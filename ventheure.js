@@ -58,13 +58,10 @@ function goTo(angle){
 
 function next(){
   piblaster.setPwm(4, curPos, function(err){
-    if(err) console.log(pwm);
 
-    var dist = Math.abs(curGoal - curPos)
-    // console.log('\t',curPos,'->',curGoal,':',dist);
+    var dist = Math.abs(curGoal - curPos);
 
-    // check if move has ended
-    if(dist > pwmStep){
+    if(dist > pwmStep/2){
 
       // check direction
       if(curGoal > curPos) curPos += pwmStep;
@@ -78,15 +75,17 @@ function next(){
   });
 }
 
-function test(callback){
+function test(){
 
-  console.log('test/boot MODE')
+  console.log('test/boot MODE');
 
-  goTo(0);
-  setTimeout(function(){ goTo(90) },  6000);
-  setTimeout(function(){ goTo(180) }, 12000);
-  setTimeout(function(){ goTo(270) }, 18000);
-  setTimeout(function(){ goTo(360) }, 24000);
+  goTo(90);
+  setTimeout(function(){ goTo(0) },  10000);
+  setTimeout(function(){ goTo(270) }, 20000);
+  setTimeout(function(){ goTo(180) }, 30000);
+  setTimeout(function(){ goTo(360) }, 40000);
+  setTimeout(function(){ goTo(320) }, 60000);
+  setTimeout(function(){ goTo(135) }, 70000);
 
 }
 
