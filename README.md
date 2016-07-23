@@ -3,11 +3,7 @@
 
 A clock displaying the wind direction.
 
-
-
 [Nuno da Luz](http://www.nunodaluz.com) & [benoît verjat](http://dcfvg.com)
-
-
 
 ### notes
 
@@ -24,5 +20,3 @@ A Raspberry Pi connects to the web and …
 */5 * * * * /usr/local/bin/node /home/pi/Scripts/custom/ventheure/ventheure.js >/dev/null 2>&1
 * */6 * * * /usr/bin/git reset --hard prod && /usr/bin/git --git-dir=/home/pi/Scripts/custom/ventheure/.git pull origin prod >/dev/null 2>&1
 ```
-
-
