@@ -57,7 +57,7 @@ function goTo(angle){
 }
 
 function next(){
-  piblaster.setPwm(4, curPos, function(err){
+  piblaster.setPwm(config.servo.pwmId, curPos, function(err){
 
     var dist = Math.abs(curGoal - curPos);
 
