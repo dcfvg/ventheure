@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodejs ventheure.js --test true",
-    "start": "nodejs ventheure.js",
+    "start": "nodejs ventheure.js"
   },
   "author": "",
   "license": "ISC",
