@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodejs ventheure.js --test true",
+    "calibrate":"bash test/test.sh;echo \"4=0\" > /dev/pi-blaster",
     "start": "nodejs ventheure.js"
   },
   "author": "",
