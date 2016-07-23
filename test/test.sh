@@ -15,3 +15,12 @@ do
   done
   sleep 1
 done
+
+trap onexit SIGINT
+trap onexit SIGTERM
+
+function onexit {
+    echo -en "\n## Caught SIGINT; Clean up and Exit \n"
+    echo "4=0" > /dev/pi-blaster
+    exit $?
+}
