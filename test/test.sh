@@ -8,7 +8,7 @@ do
     do
       mv="4=0."$i$j$k
       echo $mv
-      # echo $mv > /dev/pi-blaster
+      echo $mv > /dev/pi-blaster
       sleep .1
     done
     sleep .5
