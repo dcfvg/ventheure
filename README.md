@@ -13,17 +13,12 @@ A Raspberry Pi connects to the web and …
 
 **building api query**
 
-Paris
-`http://api.wunderground.com/api/[api-Key]/conditions/q/France/Paris.json`
-
-Madrid
-`http://api.wunderground.com/api/[api-Key]/conditions/q/Spain/Madrid.json`
-
-Paris Charles de Gaulle airport
-`http://api.wunderground.com/api/[api-Key]/conditions/q/LFPG.json`
-
-Lisbon airport
-`http://api.wunderground.com/api/[api-Key]/conditions/q/LPPT.json`
+| location                        | API url                                                                     |
+| ------------------------------- | --------------------------------------------------------------------------- |
+| Paris                           | `http://api.wunderground.com/api/[api-Key]/conditions/q/France/Paris.json`  |
+| Madrid                          | `http://api.wunderground.com/api/[api-Key]/conditions/q/Spain/Madrid.json`  |
+| Paris Charles de Gaulle airport | `http://api.wunderground.com/api/[api-Key]/conditions/q/LFPG.json`          |
+| Lisbon airport                  | `http://api.wunderground.com/api/[api-Key]/conditions/q/LFPG.json`          |
 
 find stations : https://www.wunderground.com/wundermap
 
