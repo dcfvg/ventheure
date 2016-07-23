@@ -1,0 +1,15 @@
+{
+  "api":{
+    "route": "http://api/blabla.json",
+  },
+  "servo":{
+    "pwmMin":0.08,
+    "pwmMax":0.2,
+    "pwmStep":2,
+    "speed":2,
+    "pwmId":17
+  },
+  "log":{
+    "lastValue":"last.txt"
+  }
+}
