@@ -27,8 +27,21 @@ init-system-helpers autoconf
 ./configure
 make
 
+#https://github.com/sarfata/pi-blaster/issues/68
+sudo echo "# Defaults for pi-blaster initscript
+# sourced by /etc/init.d/pi-blaster
+# installed at /etc/default/pi-blaster by the maintainer scripts
+
+#
+# This is a POSIX shell fragment
+#
+
+# Additional options that are passed to the Daemon.
+DAEMON_OPTS=" >> /etc/default/pi-blaster
+
 sudo make install
-sudo ./pi-blaster
+
+#sudo ./pi-blaster
 
 echo "change password …"
 passwd
