@@ -44,3 +44,7 @@ https://github.com/sarfata/pi-blaster/issues/68
 ```
 
 
+![](http://2.bp.blogspot.com/_1D7niXVYUd8/ShBvJFrX6bI/AAAAAAAAHCg/KjpagqdT0fE/s400/DSC07842.JPG)
+
+a wind gauge at Monticello
+
