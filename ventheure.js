@@ -39,12 +39,14 @@ function updateData(){
         // check if wind direction has changed
         if(newWindDegrees !== lastWindDegrees){
           fs.writeFile(config.log.lastValue, newWindDegrees, 'utf8', function (err) {
-            goTo(newWindDegrees);
+            piblaster.setPwm(config.servo.pwmId, degToPwm(lastWindDegrees), function(){
+              goTo(newWindDegrees);
+            })
           });
         }
       }else{
         console.error('ERROR LOADING DATA : next try in 3 min');
-        setInterval(updateData, 3 * 60 * 1000);
+        setTimeout(updateData, 3 * 60 * 1000);
       }
   })
 }
@@ -70,7 +72,9 @@ function next(){
       // start next step of the move
       setTimeout(next, speed);
     } else {
-      console.log('\t DONE ! @', pwmToDeg(curPos));
+      piblaster.setPwm(config.servo.pwmId, 0, function(){
+        console.log('\t DONE ! @', pwmToDeg(curPos));
+      })
     }
   });
 }
