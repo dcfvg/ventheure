@@ -51,9 +51,13 @@ function updateData(){
 
 // moves
 function goTo(angle){
-  curGoal = degToPwm(angle); // convert angle into Pwm value
+
+  // angle to PVm
+  curGoal = degToPwm(angle);
   console.log('from',pwmToDeg(curPos),' to ', angle, curGoal);
-  next(); // lanch mouvement
+
+  // start move
+  next();
 }
 
 function next(){
@@ -69,10 +73,14 @@ function next(){
 
       // start next step of the move
       setTimeout(next, speed);
+
     } else {
+
+      // release after move
       piblaster.setPwm(config.servo.pwmId, 0, function(){
         console.log('\t DONE ! @', pwmToDeg(curPos));
       })
+
     }
   });
 }
@@ -80,14 +88,14 @@ function next(){
 function test(){
 
   console.log('test/boot MODE');
+  var timer = 5000;
 
-  goTo(90);
-  setTimeout(function(){ goTo(0) },  10000);
-  setTimeout(function(){ goTo(270) }, 20000);
-  setTimeout(function(){ goTo(180) }, 30000);
-  setTimeout(function(){ goTo(360) }, 40000);
-  setTimeout(function(){ goTo(320) }, 60000);
-  setTimeout(function(){ goTo(135) }, 70000);
+  setTimeout(function(){ goTo(0)   }, 1*timer);
+  setTimeout(function(){ goTo(270) }, 2*timer);
+  setTimeout(function(){ goTo(180) }, 3*timer);
+  setTimeout(function(){ goTo(90) },  4*timer);
+  setTimeout(function(){ goTo(0) },   5*timer);
+  setTimeout(function(){ goTo(360) }, 6*timer);
 
 }
 
