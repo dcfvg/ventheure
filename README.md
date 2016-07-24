@@ -43,6 +43,15 @@ https://github.com/sarfata/pi-blaster/issues/68
 * */6 * * * /usr/bin/git reset --hard prod && /usr/bin/git --git-dir=/home/pi/Scripts/custom/ventheure/.git pull origin prod >/dev/null 2>&1
 ```
 
+#### bash alias 
+```bash
+movePWM() {
+  echo "$1=$2" > /dev/pi-blaster
+  echo "$1=$2"
+}
+
+alias pwmgoto=movePWM
+```
 
 ![](http://2.bp.blogspot.com/_1D7niXVYUd8/ShBvJFrX6bI/AAAAAAAAHCg/KjpagqdT0fE/s400/DSC07842.JPG)
 
