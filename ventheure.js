@@ -50,7 +50,7 @@ function updateData(){
 }
 
 // moves
-function goTo(angle){
+function goTo(angle, callback){
 
   // angle to PVm
   curGoal = degToPwm(angle);
@@ -88,7 +88,7 @@ function next(){
 function test(){
 
   console.log('test/boot MODE');
-  var timer = 5000;
+  var timer = 7000;
 
   setTimeout(function(){ goTo(0)   }, 1*timer);
   setTimeout(function(){ goTo(270) }, 2*timer);
@@ -111,7 +111,6 @@ function init(){
   updateData()
 
 }
-
 
 // begin here
 typeof argv.test !== 'undefined' ?  test() : init()
