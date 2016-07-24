@@ -28,10 +28,18 @@ find stations : https://www.wunderground.com/wundermap
 #### Raspberry Pi SD cloning for mac
 http://ivanx.com/raspberrypi/
 
+####  pi-blaster deamon
+https://github.com/sarfata/pi-blaster/issues/68
+
 #### crontab 
-```
-@reboot /usr/local/bin/node /home/pi/Scripts/custom/ventheure/ventheure.js --test=true >/dev/null 2>&1
+```bash
+# test sequence on boot
+@reboot sleep 10; /usr/local/bin/node /home/pi/Scripts/custom/ventheure/ventheure.js --test=true >/dev/null 2>&1
+
+# poll and move every 5 minutes
 */5 * * * * /usr/local/bin/node /home/pi/Scripts/custom/ventheure/ventheure.js >/dev/null 2>&1
+
+# update code 
 * */6 * * * /usr/bin/git reset --hard prod && /usr/bin/git --git-dir=/home/pi/Scripts/custom/ventheure/.git pull origin prod >/dev/null 2>&1
 ```
 
