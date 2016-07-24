@@ -39,9 +39,7 @@ function updateData(){
         // check if wind direction has changed
         if(newWindDegrees !== lastWindDegrees){
           fs.writeFile(config.log.lastValue, newWindDegrees, 'utf8', function (err) {
-            piblaster.setPwm(config.servo.pwmId, degToPwm(lastWindDegrees), function(){
-              goTo(newWindDegrees);
-            })
+            goTo(newWindDegrees);
           });
         }
       }else{
